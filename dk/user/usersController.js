@@ -64,13 +64,13 @@ const loginUser = async (userData) => {
     // payload - data you want to store in the token (can be whatever you want!)
 
     // secretKey - encrypted string that we setup in our .env that is sepcific to our application.  used to verify that the token is generated from our app
-    console.log(process.env.JWT_SECRET_KEY)
+
     const token = jwt.sign({ username: user.username }, process.env.JWT_SECRET_KEY)
 
-   // console.log(`token: ${token}`)
+    console.log(`token: ${token}`)
 
     // if they do, return true!
-    return token;
+    return user;
 
   } catch (error) {
     throw error;
